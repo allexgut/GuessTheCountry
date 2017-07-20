@@ -1,0 +1,359 @@
+﻿/* Vanilla CSS makes me write chaotically :D Should've used SASS, I know ... :D */
+
+@font-face {
+    font-family: arcade-font;
+    src: url(ARCADECLASSIC.TTF);
+}
+
+body {
+    background-color: #5D94FB;
+}
+
+    body.loaded > #wrapper {
+        display: block;
+    }
+
+    body.loaded > #preloader {
+        display: none;
+    }
+
+#preloader {
+    width: 100%;
+    height: 100%;
+}
+
+#preloader-inner {
+    height: 50px;
+    background-color: white;
+    width: 80%;
+    margin: calc(50vh - 50px) auto;
+    border-radius: 30px;
+    position: relative;
+}
+
+#preloader-progress-bar {
+    background-color: #FFBAAA;
+    height: 100%;
+    border-radius: 30px;
+    width: 0;
+    transition: .5s;
+}
+
+#preloader-percentages {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    font-size: 30px;
+    font-family: fantasy;
+}
+
+#wrapper {
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+#game-wrapper {
+    margin: 0 auto;
+    display: none;
+    position: relative;
+}
+
+#game-header {
+    background-color: #CC4B09;
+    width: 100%;
+    height: 10vw;
+    line-height: 10vw;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 3px solid #FFBAAA;
+    border-left: 3px solid #FFBAAA;
+    box-shadow: 5px 4px 4px #000000;
+}
+
+    #game-header h1 {
+        font-family: arcade-font;
+        color: #FFBAAA;
+        font-size: 7vh;
+        margin: 0;
+    }
+
+#current-country-name {
+    font-family: arcade-font;
+    letter-spacing: 30px;
+    text-align: center;
+    font-size: 3vw;
+    color: white;
+    margin: 1vw;
+}
+
+    #current-country-name > span.currentLetter {
+        position: relative;
+    }
+
+        #current-country-name > span.currentLetter:after, #current-country-name > span.currentLetter:before {
+            bottom: -3vh;
+            left: 5%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        #current-country-name > span.currentLetter:after {
+            border-color: rgba(136, 183, 213, 0);
+            border-bottom-color: white;
+            border-width: 1.2vh;
+        }
+
+#current-country-flag {
+    width: 50%;
+    height: 50vh;
+    display: none;
+    margin: 0 auto;
+    /*object-fit: cover;*/
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    border: 3px solid white;
+    box-shadow: 5px 4px 4px #000000;
+}
+
+#game-over-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    transition: 1s;
+    background-color: black;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: arcade-font;
+}
+
+#start-game-countdown {
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    /*transition: all .9s ease;*/
+    font-size: 100px;
+    color: white;
+    /*opacity: 0;*/
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background: none;
+    width: 20%;
+    height: 9vh;
+    font-family: arcade-font;
+    font-size: 4vh;
+    cursor: pointer;
+    color: white;
+    transition: all .5s;
+    box-shadow: 5px 4px 4px #000000;
+    background-color: #127C22;
+    border-top: 3px solid #b3f4bd;
+    border-left: 3px solid #b3f4bd;
+    margin-bottom: 20px;
+}
+
+    button:hover {
+        background-color: white;
+        color: #127C22;
+        border: none;
+    }
+
+
+
+#gui-elements {
+    font-family: arcade-font;
+    font-size: 30px;
+    color: white;
+    display: inline;
+    width: 100%;
+    margin-bottom: 1vw;
+    position: absolute;
+}
+
+    #gui-elements > * {
+        display: inline-block;
+        /*width: 33.3%;*/
+    }
+
+    #gui-elements > #left-column {
+        float: left;
+    }
+
+        #gui-elements > #left-column > * {
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+        }
+
+    #gui-elements > #right-column {
+        float: right;
+    }
+
+        #gui-elements > #right-column > * {
+            display: inline-block;
+            text-align: right;
+            width: 100%;
+        }
+
+
+#timer {
+    text-align: center;
+    font-size: 50px;
+}
+
+#tutorial-wrapper {
+    font-family: arcade-font;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    word-spacing: 6px;
+}
+
+    #tutorial-wrapper ul {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+#how-to-play-wrapper {
+    display: none;
+    font-family: arcade-font;
+    text-align: left;
+    color: white;
+    font-size: 3.5vh;
+    word-spacing: 6px;
+}
+
+    #how-to-play-wrapper p {
+        text-align: center;
+    }
+
+    #how-to-play-wrapper ul {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #how-to-play-wrapper li ul {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+#buttons-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+#endless-mode {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #CC4B09;
+    border-top: 3px solid #FFBAAA;
+    border-left: 3px solid #FFBAAA;
+}
+
+    #endless-mode:hover {
+        color: white;
+    }
+
+    #endless-mode.pressed {
+        background-color: #127C22;
+        border-top: 3px solid #b3f4bd;
+        border-left: 3px solid #b3f4bd;
+    }
+
+@media (max-width: 800px) {
+    #wrapper {
+        width: 90%;
+    }
+
+    #country-wrapper {
+        padding-top: 160px;
+    }
+
+    #game-header {
+        height: auto;
+    }
+
+        #game-header h1 {
+            font-size: 6vh;
+        }
+
+    #gui-elements {
+        font-size: 20px;
+        position: static;
+    }
+
+        #gui-elements > * {
+            width: 50%;
+        }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    #game-wrapper {
+        width: 100%;
+    }
+
+    #country-wrapper {
+        padding-top: 120px;
+    }
+
+    #current-country-flag {
+        width: 100%;
+        height: 30vh;
+    }
+
+    #current-country-name {
+        font-size: 6vw;
+        letter-spacing: 15px;
+        margin: 10vw;
+    }
+
+    button {
+        width: 50%;
+    }
+
+    #endless-mode {
+        position: static;
+    }
+
+    #tutorial-wrapper {
+        font-size: 20px;
+    }
+
+    #how-to-play-wrapper {
+        font-size: 20px;
+    }
+
+        #how-to-play-wrapper ul {
+            width: auto;
+        }
+
+        #how-to-play-wrapper li ul {
+            width: auto;
+        }
+}
+
+@media (min-width: 500px) and (max-wdth: 800px) {
+    #wrapper {
+        width: 80%;
+    }
+}

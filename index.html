@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the country</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="preloader">
+        <div id="preloader-inner">
+            <div id="preloader-progress-bar"></div>
+            <div id="preloader-percentages">0%</div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="game-header">
+            <h1>
+                Guess the country
+            </h1>
+        </div>
+        <div id="tutorial-wrapper">
+            <p>
+                The objective is to guess the country by its flag.<br /> For more information, click the "How to play" button.
+            </p>
+        </div>
+
+        <div id="buttons-wrapper">
+            <button id="start-game">start game</button>
+            <button id="endless-mode">endless mode</button>
+            <button id="how-to-play">how to play</button>
+        </div>
+
+        <div id="how-to-play-wrapper">
+            <p>
+                The objective of the game is pretty simple: you're shown a country flag and you have 10 seconds to guess which the country is. You're free to choose from two modes:
+            </p>
+            <ul>
+                <li>
+                    Normal mode:
+                    <ul>
+                        <li>
+                            You have 10 seconds to guess
+                        </li>
+                        <li>
+                            Each correct answers gives you 10 points + the seconds left multiplied by 10.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Endless mode:
+                    <ul>
+                        <li>
+                            You have 10 seconds to guess
+                        </li>
+                        <li>
+                            You're allowed 3 incorrect guesses
+                        </li>
+                        <li>
+                            For each <span id="answers-in-a-row"> </span> answers in a row, you get your multiplier increased by 1.
+                        </li>
+                        <li>
+                            Each correct answer gives you 10 points + the seconds left multiplied by the current multplier value.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="game-wrapper">
+            <div id="gui-elements">
+                <div id="left-column">
+                    <div id="points-wrapper">
+                        <span id="points-label">Points: </span>
+                        <div id="points">0</div>
+                    </div>
+                    <div id="multiplier-wrapper">
+                        <div id="multiplier-label">Multiplier: </div>
+                        <div id="multiplier"></div>
+                    </div>
+                    <div id="incorrect-answers-wrapper">
+                        <div id="incorrect-answers-label">Wrong answers<br />left: </div>
+                        <div id="incorrect-answers">3</div>
+                    </div>
+                    <div id="progress-wrapper">
+                        Progress:
+                        <span id="progress-current"></span>
+                        <span id="progress-total"></span>
+                    </div>
+                </div>
+                <div id="right-column">
+                    <div id="timer">
+                    </div>
+                    <div id="high-score-wrapper">
+                        <span id="high-score-label">High Score:</span>
+                        <div id="high-score"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="start-game-countdown"></div>
+            <div id="country-wrapper">
+                <img id="current-country-flag" src="" />
+                <p id="current-country-name"></p>
+            </div>
+        </div>
+        <div id="game-over-wrapper">
+            <h1>game over</h1>
+            <button id="restart-game">restart game</button>
+            <div id="game-over-your-score-label">your score:</div>
+            <div id="game-over-your-score"></div>
+            <br />
+            <div id="game-over-high-score-label">high score: </div>
+            <div id="game-over-high-score"></div>
+        </div>
+    </div>
+    <script src="js/PointSystem.js"></script>
+    <script src="js/CountdownTimer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
