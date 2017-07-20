@@ -1,1 +1,0 @@
-﻿I really wanted to include Unit Tests (I researched how Jasmine works) but I didn't have the time to squeeze that in. So I decided that, instead, it's better to clean up my code a bit. My css is still a mess tho. :) Should've used SASS.
