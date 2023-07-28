@@ -1,3 +1,3 @@
 ## Guess the country game
 
-This is a simple game I created over an year ago (as an exercise), using vanilla JS, HTML and CSS.
+This is a simple game I created as an exercise during my studies.
